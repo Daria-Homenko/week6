@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Flower meaning</title>
+    {% endif %}
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+    {% if session_id %}
+    You are '{{session_id}}'. <a href="{{ url_for('pages_view.logout') }}">Logout</a>
+    {% else %}
+    You are UNKNOWN USER. <a href="{{ url_for('pages_view.login') }}">Login</a>
+    {% endif %}
+    <hr>
+    {% block content %}{% endblock %}
+
+</body>
+</html>

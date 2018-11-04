@@ -1,0 +1,44 @@
+{% extends "base_login.html" %}
+
+{% block content %}
+
+
+     <h1>Sign In</h1>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.s_username.label }}<br>
+                {{ form.s_username(size=32) }}
+
+                {% for error in form.s_username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.s_age.label }}<br>
+                {{ form.s_age(size=32) }}
+
+                {% for error in form.s_age.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.s_email.label }}<br>
+                {{ form.s_email(size=32) }}
+
+                {% for error in form.s_email.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.s_password.label }}<br>
+                {{ form.s_password(size=32) }}
+
+                {% for error in form.s_password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.s_submit() }}</p>
+        </form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <a href="{{ url_for('pages_view.home_page')}}">Home</a>
+        <a href= "{{url_for('pages_view.list_of_flowers_page')}}">List of flower</a>
+    </div>
+
+    </h2>
+    <h1>{{ flower_name_1 }}</h1>
+    <div>
+        <p>
+            <img src="{{flower_image}}">
+        </p>
+
+    </div>
+
+    <div class="text">
+        {{flower_meaning}}
+    </div>
+{% endblock %}

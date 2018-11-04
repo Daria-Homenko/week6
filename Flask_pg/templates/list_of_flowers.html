@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <a href="{{ url_for('pages_view.home_page')}}">Home</a>
+    </div>
+
+    <ul>
+        {% for item in data %}
+        <li><p><a href="{{ url_for('pages_view.flower_page', flower_name=item) }}">{{ item }}</a></p></li>
+        {% endfor %}
+    </ul>
+    <div>
+        <p>
+            <img src="https://pustunchik.ua/uploads/school/a37a87a1c57daa778d59326964287e6d.jpg">
+        </p>
+    </div>
+
+{% endblock %}

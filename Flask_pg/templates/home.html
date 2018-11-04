@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <style>
+        h1 {text-align: center}
+        div {margin-left: auto;
+            margin-right: auto;}
+    </style>
+</head>
+<body>
+    <p>You are {{session_id}}. <a href="{{ url_for('pages_view.logout') }}">Logout</a></p>
+    <h1><a href="{{ url_for('pages_view.list_of_flowers_page') }}">List of flowers</a></h1>
+
+    <div>
+        <h1>News</h1>
+        {% for elem in data.get("news") %}
+        <p>
+            <div class="discusBox">
+             <img src="https://trello-attachments.s3.amazonaws.com/5b957bbe5fdf19329fda4d75/5bcb89cfe98dec33e114028e/5dbe2beb87f93bfc35b46c100f7261fd/%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%BA1.png"> <!-- just for testing -->
+
+             <div class="discusTitle">
+               <h3>[test] Title of the Discussion</h3> <!-- just for testing -->
+             </div>
+
+             <div class="discusBrief">
+               <p>Here we are talking about something. and this is the short brief about it.</p>
+            <!-- just for testing -->
+             </div><!-- end of discusBrief -->
+
+             <div class="discusMeta">
+
+               <div class="discusMetaPostedOn">
+                 <span>Posted on</span>
+                 <span class="discusMetaPostedOnDate">
+                   4/4/1984 <!-- just for testing -->
+                 </span>
+               </div>
+
+               <div class="discusBy">
+                 <span>by</span>
+                 <span>
+                   Firstname Surname <!-- just for testing -->
+                 </span>
+               </div>
+
+               <div class="discusLink">
+                 <a href="#">View &rarr;</a> <!-- just for testing -->
+               </div>
+
+             </div><!-- end of discusMeta -->
+            </div>
+        </p>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
